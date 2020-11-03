@@ -1,0 +1,26 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+#screen {
+   
+    width: 1200px;
+    height: 600px;
+    border: black 1px solid;
+}
+
+#witch {
+    background-color: coral;
+    height: 150px;
+    width: 50px;
+    top: 450px;
+    position: relative;
+}
+
+#monster {
+    background-color: cornflowerblue;
+    height: 50px;
+    width: 50px;
+    position: relative;
+}
