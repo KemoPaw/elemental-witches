@@ -16,20 +16,19 @@
     height: 150px;
     width: 50px;
     top: 450px;
+    left: 50px;
     position: relative;
-    animation: jump 500ms infinite linear;
-
 }
-
-
+ 
 .animate{
-    animation: jump 0.3s linear;
+    animation: jump 0.5s linear;
+    border: magenta 1px solid;
 }
 
 @keyframes jump{
     0%{top: 450px;}
-    30%{top: 400px;}
-    70%{top: 350px;}
+    30%{top: 300px;}
+    70%{top: 300px;}
     100%{top: 450px;}
 }
 
@@ -40,7 +39,7 @@
     top: 400px;
     left: 1150px;
     position: relative;
-    animation: monster 1s infinite linear;
+    animation: monster 2s infinite linear;
 
 }
 
