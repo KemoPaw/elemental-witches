@@ -3,12 +3,13 @@
     margin: 0px;
 }
 
-#screen {
+.screen {
    
     width: 1200px;
     height: 600px;
     border: black 1px solid;
 }
+
 
 #witch {
     background-color: coral;
@@ -16,11 +17,34 @@
     width: 50px;
     top: 450px;
     position: relative;
+    animation: jump 500ms infinite linear;
+
+}
+
+
+.animate{
+    animation: jump 0.3s linear;
+}
+
+@keyframes jump{
+    0%{top: 450px;}
+    30%{top: 400px;}
+    70%{top: 350px;}
+    100%{top: 450px;}
 }
 
 #monster {
     background-color: cornflowerblue;
     height: 50px;
     width: 50px;
+    top: 400px;
+    left: 1150px;
     position: relative;
+    animation: monster 1s infinite linear;
+
+}
+
+@keyframes monster{
+    0%{left: 1150px;}
+    100%{left: -50px;}
 }
