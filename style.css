@@ -12,17 +12,23 @@
 
 
 #witch {
-    background-color: coral;
+    
     height: 150px;
     width: 50px;
     top: 450px;
     left: 50px;
     position: relative;
+    background-color: cadetblue;
+}
+
+.witchStill {
+    background-color: mediumpurple!important;
 }
  
 .animate{
     animation: jump 0.5s linear;
     border: magenta 1px solid;
+    background-color: coral!important;
 }
 
 @keyframes jump{

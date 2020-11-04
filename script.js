@@ -5,8 +5,10 @@ var counter = 0;
 function jump() {
     if (witch.classList === "animate") { return }
     witch.classList.add("animate");
+    witch.classList.remove("witchStill");
     setTimeout(function () {
         witch.classList.remove("animate");
+        witch.classList.add("witchStill");
     }, 500);
 }
 
@@ -14,12 +16,12 @@ let checkHit = setInterval(function () {
     let witchTop = parseInt(window.getComputedStyle(witch).getPropertyValue("top"));
     let monsterLeft = parseInt(window.getComputedStyle(monster).getPropertyValue("left"));
     if (monsterLeft < 100 && monsterLeft > -100 && witchTop >= 400){
-        monster.style.animation = "none";
-        alert("Game Over. score: " + Math.floor(counter / 100));
-        counter = 0;
-        monster.style.animation = "block 1s infinite linear";
+        // monster.style.animation = "none";
+        // alert("Game Over. score: " + Math.floor(counter / 100));
+        // counter = 0;
+        // monster.style.animation = "block 1s infinite linear";
     } else {
-        counter++;
-        document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
+        // counter++;
+        // document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
     }
 }, 20);
