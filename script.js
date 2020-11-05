@@ -15,16 +15,19 @@ window.addEventListener("keyup", colorReset);
 
 
 function jump(e) {
-    if (witch.classList === "animate" && e.keyCode === 32) { return }
-    witch.classList.add("animate");
-    // witch.classList.add("witchOrange");
+    if (e.keyCode === 32){
+        if (witch.classList === "animate") { return }
+        witch.classList.add("animate");
+        // witch.classList.add("witchOrange");
 
 
-    setTimeout(function () {
-        witch.classList.remove("animate");
-        // witch.classList.remove("witchOrange");
+        setTimeout(function () {
+            witch.classList.remove("animate");
+            // witch.classList.remove("witchOrange");
 
-    }, 500);
+        }, 500);
+    }
+   
 }
 
 
@@ -35,8 +38,6 @@ function colorReset() {
     witch.classList.remove("witchOrange");
     witch.classList.remove("witchGreen");
     witch.classList.remove("witchPurple");
-
-
 
 }
 
