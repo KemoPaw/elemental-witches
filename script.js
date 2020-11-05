@@ -101,7 +101,7 @@ let checkHit = setInterval(function() {
     }
     else if (monsterLeft < 100 && monsterLeft > 50 && witchTop >= 400 && monsterColor !== witchColor){
         monster.style.animation = "none";
-        alert("Game Over. score: " + Math.floor(counter / 100));
+        alert("Game Over. score: " + counter);
         counter = 0;
         monster.style.animation = "block 1s infinite linear";
         location.reload();
