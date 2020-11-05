@@ -1,8 +1,7 @@
 const witch = document.getElementById("witch");
 const monster = document.getElementById("monster");
 // let monsterColor = window.getComputedStyle(monster).backgroundColor;
-
-var counter = 0;
+let counter = 0;
 const keys = [];
 
 
@@ -85,9 +84,7 @@ function colorChange(e) {
         //         witch.classList.remove("witchYellow");
         //      witch.classList.add("witchCyan");
 }
-// window.addEventListener("keyup", function (e) {
-//     delete keys[e.keyCode];
-// });
+
 
 
 
@@ -97,21 +94,17 @@ let checkHit = setInterval(function () {
     let monsterColor = window.getComputedStyle(monster).backgroundColor;
     let witchColor = window.getComputedStyle(witch).backgroundColor;
 
-    if (monsterLeft < 100 && monsterLeft > 50 && witchTop >= 400  && monsterColor == witchColor){
-        // console.log(monsterColor);
-        // console.log(witchColor);
+    document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
 
+    if (monsterLeft < 100 && monsterLeft > 50 && witchTop >= 400  && monsterColor === witchColor){
+        counter+=1;
+    }
+    else if (monsterLeft < 100 && monsterLeft > 50 && witchTop >= 400 && monsterColor !== witchColor){
         monster.style.animation = "none";
         alert("Game Over. score: " + Math.floor(counter / 100));
         counter = 0;
         monster.style.animation = "block 1s infinite linear";
     }
-    // } else if (witchColor === monsterColor) {
-    //     counter--;
-    //     document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
-    // }
-    else {
-        counter++;
-        document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
-    }
-}, 20);
+    document.getElementById("scoreSpan").innerHTML = Math.floor(counter); //(counter / 100);
+
+}, 70);
