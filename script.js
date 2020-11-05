@@ -88,7 +88,7 @@ function colorChange(e) {
 
 
 
-let checkHit = setInterval(function () {
+let checkHit = setInterval(function() {
     let witchTop = parseInt(window.getComputedStyle(witch).getPropertyValue("top"));
     let monsterLeft = parseInt(window.getComputedStyle(monster).getPropertyValue("left"));
     let monsterColor = window.getComputedStyle(monster).backgroundColor;
@@ -104,6 +104,7 @@ let checkHit = setInterval(function () {
         alert("Game Over. score: " + Math.floor(counter / 100));
         counter = 0;
         monster.style.animation = "block 1s infinite linear";
+        location.reload();
     }
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter); //(counter / 100);
 
