@@ -1,16 +1,25 @@
 const witch = document.getElementById("witch");
 const monster = document.getElementById("monster");
-// let monsterColor = window.getComputedStyle(monster).backgroundColor;
+
 let counter = 0;
 const keys = [];
 
 
-
-
 window.addEventListener("keydown", jump);
-
 window.addEventListener("keydown", colorChange);
 window.addEventListener("keyup", colorReset);
+
+const randMonsterColors = ["magenta", "yellow", "cyan", "orange", "green", "purple"];
+
+const monsterColorArray = [];
+
+function monsterRandColor(){
+    while(monsterColorArray.length < 5){
+        monsterColorArray.push(randMonsterColors.sample);
+    }
+}
+monsterRandColor();
+console.log(monsterColorArray);
 
 
 function jump(e) {
@@ -28,7 +37,6 @@ function jump(e) {
     }
    
 }
-
 
 function colorReset() {
     witch.classList.remove("witchMagenta");
@@ -71,18 +79,6 @@ function colorChange(e) {
         witch.classList.add("witchPurple");
 
     }
-
-    // if (e.keyCode === 65 && e.keyCode === 83) {
-    //     witch.classList.add("witchOrange");
-
-    // }
-
-        // case 83: 
-        //         witch.classList.add("witchYellow");
-        // case 68: 
-        //         witch.classList.remove("witchMagenta");
-        //         witch.classList.remove("witchYellow");
-        //      witch.classList.add("witchCyan");
 }
 
 
@@ -104,7 +100,7 @@ let checkHit = setInterval(function() {
         alert("Game Over. score: " + counter);
         counter = 0;
         monster.style.animation = "block 1s infinite linear";
-        location.reload();
+        // location.reload();
     }
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter); //(counter / 100);
 
