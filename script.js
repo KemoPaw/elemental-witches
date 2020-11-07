@@ -9,20 +9,6 @@ window.addEventListener("keydown", jump);
 window.addEventListener("keydown", colorChange);
 window.addEventListener("keyup", colorReset);
 
-
-
-// const monsterColorArray = [];
-
-// function monsterRandColor(){
-//     while(monsterColorArray.length < 5){
-//         let randomColor = randMonsterColors[Math.floor(Math.random() * randMonsterColors.length)];
-//         monsterColorArray.push(randomColor);
-//     }
-// }
-// monsterRandColor();
-// console.log(monsterColorArray);
-
-
 function jump(e) {
     if (e.keyCode === 32){
         if (witch.classList === "animate") { return }
@@ -106,23 +92,18 @@ function resetColor(){
 
 }
 
-
-
 let checkHit = setInterval(function() {
     let witchTop = parseInt(window.getComputedStyle(witch).getPropertyValue("top"));
     let monsterLeft = parseInt(window.getComputedStyle(monster).getPropertyValue("left"));
     let monsterColor = window.getComputedStyle(monster).backgroundColor;
     let witchColor = window.getComputedStyle(witch).backgroundColor;
     
-    
-   
-  
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
     if (counter === 0) {
         monster.classList.add("monsterMagenta");
     }
 
-    if (monsterLeft < 100 && monsterLeft > 50 && witchTop >= 400  && monsterColor === witchColor){
+    if (monsterLeft < 100 && monsterLeft > 0 && witchTop >= 400  && monsterColor === witchColor){
         counter+=1;
 
         if (monsterColor && counter >= 1) {
@@ -151,4 +132,4 @@ let checkHit = setInterval(function() {
    
     
 
-}, 70);
+}, 200);
