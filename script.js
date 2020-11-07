@@ -89,10 +89,21 @@ function addColor() {
     return randomColor;
 }
 
+function addAdvColor() {
+    const randAdvMonsterColors = ["monsterMagenta", "monsterYellow", "monsterCyan", "monsterOrange", "monsterGreen", "monsterPurple"];
+    let randomAdvColor = randAdvMonsterColors[Math.floor(Math.random() * randAdvMonsterColors.length)];
+    // console.log(randomColor);
+    return randomAdvColor;
+}
+
 function resetColor(){
     monster.classList.remove("monsterMagenta");
     monster.classList.remove("monsterYellow");
     monster.classList.remove("monsterCyan");
+    monster.classList.remove("monsterOrange");
+    monster.classList.remove("monsterPurple");
+    monster.classList.remove("monsterGreen");
+
 }
 
 
@@ -120,7 +131,13 @@ let checkHit = setInterval(function() {
             monster.classList.add(newColor);
             monsterColor = newColor;
         }
-        
+
+        if (monsterColor && counter >= 10) {
+            resetColor();
+            let newAdvColor = addAdvColor();
+            monster.classList.add(newAdvColor);
+            monsterColor = newAdvColor;
+        }
        
     }
     else if (monsterLeft < 100 && monsterLeft > 50 && witchTop >= 400 && monsterColor !== witchColor){
