@@ -50,7 +50,7 @@ h1 {
 #witch {
     height: 100px;
     width: 50px;
-    top: 350px;
+    top: 355px;
     left: 50px;
     position: relative;
     background-color:rgba(173, 168, 173, 0);
@@ -89,10 +89,10 @@ h1 {
 }
 
 @keyframes jump{
-    0%{top: 350px;}
+    0%{top: 355px;}
     30%{top: 200px;}
     70%{top: 200px;}
-    100%{top: 350px;}
+    100%{top: 355px;}
 }
 
 #monster {
