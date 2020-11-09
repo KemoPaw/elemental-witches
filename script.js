@@ -129,7 +129,7 @@ let checkHit = setInterval(function() {
         alert("Game Over. score: " + counter);
         counter = 0;
         monster.style.animation = "block 1s infinite linear";
-        // location.reload();
+        location.reload();
     }
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter); //(counter / 100);
 
