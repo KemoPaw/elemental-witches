@@ -10,7 +10,21 @@
 }
 
 p {
-    color: cyan;
+    color: white;
+    font-size: 20px;
+}
+
+.score {
+    color: white;
+    font-size: 20px;
+     background-color: #393f6d;
+     padding: 5px;
+     font-size: 35px;
+
+}
+
+#scoreSpan {
+     background-color: #393f6d;
 }
 
 h1 {
@@ -31,14 +45,6 @@ h1 {
     background-color: #393f6d;
     overflow: hidden;
 }
-
-/* #floor {
-    bottom: 0px;
-    height: 50px;
-    display: flex;
-    align-content: flex-end;
-   background-color: grey;
-} */
 
 
 #witch {
@@ -68,7 +74,6 @@ h1 {
 
 .witchMagenta {
     background-color: magenta!important;
-    border-right: white 3px solid;
 }
  
 .witchYellow {
@@ -135,19 +140,28 @@ h1 {
 }
 
 
+.instructionDiv {
+  
+ 
+}
 .instructions {
+    font-size: 25px;;
     padding: 5px;
     color: white;
+    text-align: center;
 }
 
 .instructButton {
     padding: 7px;
+    text-align: center;
 }
+
 .monMagenta {
     background-color: magenta!important;
     font-size: 20px;
    border: white 2px solid;
    padding: 5px;
+   color: #191947;
 }
 
 .monYellow {
@@ -155,6 +169,7 @@ h1 {
     font-size: 20px;
      border: white 2px solid;
    padding: 5px;
+   color: #191947;
 
 }
 
@@ -163,6 +178,7 @@ h1 {
     font-size: 20px;
      border: white 2px solid;
    padding: 5px;
+   color: #191947;
 
 }
 
@@ -171,6 +187,7 @@ h1 {
     font-size: 20px;
      border: white 2px solid;
    padding: 5px;
+   color: #191947;
 
 }
 
@@ -179,6 +196,7 @@ h1 {
     font-size: 20px;
      border: white 2px solid;
    padding: 5px;
+   color: #191947;
 
 }
 
@@ -187,5 +205,6 @@ h1 {
     font-size: 20px;
      border: white 2px solid;
    padding: 5px;
+   color: #191947;
 
 }
