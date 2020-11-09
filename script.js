@@ -95,15 +95,18 @@ function resetColor(){
 let checkHit = setInterval(function() {
     let witchTop = parseInt(window.getComputedStyle(witch).getPropertyValue("top"));
     let monsterLeft = parseInt(window.getComputedStyle(monster).getPropertyValue("left"));
-    let monsterColor = window.getComputedStyle(monster).backgroundColor;
-    let witchColor = window.getComputedStyle(witch).backgroundColor;
+
     
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
+
     if (counter === 0) {
         monster.classList.add("monsterMagenta");
     }
 
-    if (monsterLeft < 100 && monsterLeft > 0 && witchTop >= 400  && monsterColor === witchColor){
+    let monsterColor = window.getComputedStyle(monster).backgroundColor;
+    let witchColor = window.getComputedStyle(witch).backgroundColor;
+
+    if (monsterLeft < 100 && monsterLeft > 0 && witchTop >= 300  && monsterColor === witchColor){
         counter+=1;
 
         if (monsterColor && counter >= 1) {
@@ -113,7 +116,7 @@ let checkHit = setInterval(function() {
             monsterColor = newColor;
         }
 
-        if (monsterColor && counter >= 10) {
+        if (monsterColor && counter >= 5) {
             resetColor();
             let newAdvColor = addAdvColor();
             monster.classList.add(newAdvColor);
@@ -121,7 +124,7 @@ let checkHit = setInterval(function() {
         }
        
     }
-    else if (monsterLeft < 100 && monsterLeft > 50 && witchTop >= 400 && monsterColor !== witchColor){
+    else if (monsterLeft < 100 && monsterLeft > 50 && witchTop >= 300 && monsterColor !== witchColor){
         monster.style.animation = "none";
         alert("Game Over. score: " + counter);
         counter = 0;
@@ -129,7 +132,5 @@ let checkHit = setInterval(function() {
         // location.reload();
     }
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter); //(counter / 100);
-   
-    
 
-}, 200);
+}, 70);

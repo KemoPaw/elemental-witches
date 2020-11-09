@@ -11,12 +11,37 @@
 <body>
 
     <h1>Elemental Witches</h1>   
-    <p>Score: <span id="scoreSpan"></span></p> 
-
-    <div class="screen">
-        <div id="witch"></div>
-        <div id="monster"></div>
+    <div clss="game-header">
+        <div class="instructions">
+            <p class="instructions">Hit all the squares coming your wa, before they hit you! (Use "SPACE" to jump if needed) </p>
+            <div>
+                <div class=instructButton>
+                    <span class="monMagenta">"A"</span>
+                    <span class="monYellow">"S"</span>
+                <span class="monCyan">"D"</span>
+                </div>  
+                    <br/>
+                <div class=instructButton>
+                    <span class="monOrange">"Z"</span>
+                    <span class="monGreen">"X"</span>
+                    <span class="monPurple">"C"</span>
+                </div>
+            </div>
+        </div>
+        <p>Score: <span id="scoreSpan"></span></p>
+        <div class="screen">
+        
+            <!-- <div id="witch"></div> -->
+            <img id="witch" src="witch-pixel2.png"></img>
+        
+            <div id="monster"></div>
+            <div id="floor"></div>
+        
+        </div>
     </div>
+  
+
+   
   
 
 <script src="script.js"></script>

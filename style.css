@@ -1,35 +1,53 @@
 * {
     padding: 0px;
     margin: 0px;
-    background-color: #000033;
+    background-color: #191947;
     font-family: 'VT323', monospace;
 }
 
-h1, p {
+.game-header > *{
+    color: white;
+}
+
+p {
     color: cyan;
 }
 
 h1 {
-    font-size: 35px;
+    font-size: 75px;
+    font-weight: 600;
+    /* color: cyan; */
+    text-align: center;
+    background: -webkit-linear-gradient(#092973, #42e3f5);
+    /* -webkit-text-stroke: 0.01px #66ffff; */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .screen {
    margin: auto;
     width: 1200px;
-    height: 600px;
-    border: #8682ae 1px solid;
+    height: 500px;
+    border: #74b5f0 2px solid;
     background-color: #393f6d;
     overflow: hidden;
 }
 
+/* #floor {
+    bottom: 0px;
+    height: 50px;
+    display: flex;
+    align-content: flex-end;
+   background-color: grey;
+} */
+
 
 #witch {
-    
-    height: 150px;
+    height: 100px;
     width: 50px;
-    top: 450px;
+    top: 350px;
     left: 50px;
     position: relative;
-    background-color: grey;
+    background-color:rgba(173, 168, 173, 0);
 }
 
 .witchStill {
@@ -50,6 +68,7 @@ h1 {
 
 .witchMagenta {
     background-color: magenta!important;
+    border-right: white 3px solid;
 }
  
 .witchYellow {
@@ -65,20 +84,20 @@ h1 {
 }
 
 @keyframes jump{
-    0%{top: 450px;}
-    30%{top: 300px;}
-    70%{top: 300px;}
-    100%{top: 450px;}
+    0%{top: 350px;}
+    30%{top: 200px;}
+    70%{top: 200px;}
+    100%{top: 350px;}
 }
 
 #monster {
     background-color: grey;
     height: 50px;
     width: 50px;
-    top: 400px;
+    top: 300px;
     left: 1150px;
     position: relative;
-    animation: monster 2s infinite linear;
+    animation: monster 1.5s infinite linear;
 
 }
 
@@ -113,4 +132,60 @@ h1 {
 
 .monsterPurple {
     background-color: #A25DFF!important;
+}
+
+
+.instructions {
+    padding: 5px;
+    color: white;
+}
+
+.instructButton {
+    padding: 7px;
+}
+.monMagenta {
+    background-color: magenta!important;
+    font-size: 20px;
+   border: white 2px solid;
+   padding: 5px;
+}
+
+.monYellow {
+    background-color: yellow!important;
+    font-size: 20px;
+     border: white 2px solid;
+   padding: 5px;
+
+}
+
+.monCyan{
+    background-color: cyan!important;
+    font-size: 20px;
+     border: white 2px solid;
+   padding: 5px;
+
+}
+
+.monOrange{
+    background-color: #FFB946!important;
+    font-size: 20px;
+     border: white 2px solid;
+   padding: 5px;
+
+}
+
+.monGreen {
+    background-color: #80FF80!important;
+    font-size: 20px;
+     border: white 2px solid;
+   padding: 5px;
+
+}
+
+.monPurple {
+     background-color: #A25DFF!important;
+    font-size: 20px;
+     border: white 2px solid;
+   padding: 5px;
+
 }
