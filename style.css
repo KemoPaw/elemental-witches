@@ -37,14 +37,29 @@ h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.screen {
-   margin: auto;
+#screen {
+    display: none;
+    margin: auto;
     width: 1200px;
     height: 500px;
     border: #74b5f0 2px solid;
     background-color: #393f6d;
     overflow: hidden;
 }
+
+#info-screen {
+    display: block;
+
+    margin: auto;
+    width: 1200px;
+    height: 500px;
+    border: #74b5f0 2px solid;
+    background-color: #393f6d;
+    overflow: hidden;
+
+}
+
+
 
 
 #witch {
