@@ -37,36 +37,60 @@ function startTheGame(e){
     checkHit();
     }
 
-    else if (e.keyCode === 13){
+    // else if (e.keyCode === 13){
        
-            restartGame = true;
+            // restartGame = true;
             // startGame = true;
             // startGame = true;
 
             // startGame = true;
 
-            gameoverScreen.style.display = "none";
-            gameScreen.style.display = "block";
-            checkHit();
-            console.log("Hello from start the game");
+            // gameoverScreen.style.display = "none";
+            // gameScreen.style.display = "block";
+            // checkHit();
+            // console.log("Hello from start the game");
+    // }
 
-       
+}
+
+function restartTheGame(e) { // PRESS R
+    e.preventDefault();
+    if (e.keyCode === 82){
+        restartGame = true;
+
+        gameoverScreen.style.display = "none";
+        gameScreen.style.display = "block";
+
+        // resetEventListener();
+        // console.log(allowedToJump);
+        finalScore.textContent = 0;
+        console.log(finalScore.textContent);
+
+        // allowedToJump = true;
+        // console.log(witchTop);
+    // console.log(monsterLeft);
+
+
+        checkHit();
+        // location.reload();
+        console.log("Hello from restart the game");
+        // console.log(counter);
+
     }
 
 }
 
-// function restartTheGame(e) {
-//     e.preventDefault();
-//     if (e.keyCode === 13 && restartGame === true){
-//         restartGame = false;
-//         gameoverScreen.style.display = "none";
-//         gameScreen.style.display = "block";
-//         checkHit();
-//         console.log("Hello from start the game");
-//         // console.log(counter);
-//     }
+function resetEventListener() {
 
-// }
+    window.removeEventListener("keydown", startTheGame);
+    window.removeEventListener("keydown", restartTheGame);
+    window.removeEventListener("keydown", jump);
+    window.removeEventListener("keydown", colorChange);
+    window.removeEventListener("keyup", colorReset);
+    colorReset();
+    resetColor();
+
+}
 
 // if (startGame === false) {
 //     startTheGame();
@@ -74,9 +98,7 @@ function startTheGame(e){
 
 
 window.addEventListener("keydown", startTheGame);
-// window.addEventListener("keydown", restartTheGame);
-
-
+window.addEventListener("keydown", restartTheGame);
 window.addEventListener("keydown", jump);
 window.addEventListener("keydown", colorChange);
 window.addEventListener("keyup", colorReset);
@@ -183,12 +205,23 @@ function checkHit() {
     // console.log("Game Start!")
     let witchTop = parseInt(window.getComputedStyle(witch).getPropertyValue("top"));
     let monsterLeft = parseInt(window.getComputedStyle(monster).getPropertyValue("left"));
-
     
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
 
+        console.log(finalScore.textContent);
+
+    // console.log(monster.style.animation);
+    // console.log(witch.style)
+
+
     if (counter === 0) {
         monster.classList.add("monsterMagenta");
+        // console.log("counter is zero");
+        // console.log(monster.style.animation);
+        
+        if (monster.style.animation === "none") {
+            monster.style.animation = "0s ease 0s 1 normal none running none";
+        }
     }
 
     let monsterColor = window.getComputedStyle(monster).backgroundColor;
@@ -202,6 +235,8 @@ function checkHit() {
             let newColor = addColor();
             monster.classList.add(newColor);
             monsterColor = newColor;
+        console.log("baby levels");
+
         }
 
         if (monsterColor && counter >= 5) {
@@ -209,23 +244,29 @@ function checkHit() {
             let newAdvColor = addAdvColor();
             monster.classList.add(newAdvColor);
             monsterColor = newAdvColor;
+            console.log("adv levels");
+
         }
        
     }
     else if (monsterLeft < 100 && monsterLeft > 50 && witchTop >= 300 && monsterColor !== witchColor){
-        monster.style.animation = "none";
-        finalScore.textContent += counter;
+        console.log(monster.style.animation);
+
+        // monster.style.animation = "none";
+        console.log(monster.style.animation);
+        finalScore.textContent = counter;
         // alert("Game Over. score: " + counter);
-        monster.style.animation = "block 1s infinite linear";
+        // monster.style.animation = "block 1s infinite linear";
         gameScreen.style.display = "none";
         gameoverScreen.style.display = "block";
         console.log(counter);
         counter = 0;
-        restartGame = false;
+        restartGame = true;
 
 
         console.log("Game Over! Counter is zero now!");
-        clearInterval(checkHit);
+        // clearInterval(checkHit);
+
     }
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter); //(counter / 100);
 
