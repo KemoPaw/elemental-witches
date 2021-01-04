@@ -14,6 +14,7 @@ const keys = [];
 
 let allowedToJump = true;
 let startGame = false;
+let restartGame = false;
 
 // console.log(startGame);
 
@@ -26,16 +27,46 @@ let startGame = false;
 function startTheGame(e){
     e.preventDefault();
 
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13 && startGame === false) {
     startGame = true;
     // console.log(startGame);
 
     gameScreen.style.display = "block";
     startScreenInfo.style.display = "none";
+    console.log("Start the first game!")
     checkHit();
     }
 
+    else if (e.keyCode === 13){
+       
+            restartGame = true;
+            // startGame = true;
+            // startGame = true;
+
+            // startGame = true;
+
+            gameoverScreen.style.display = "none";
+            gameScreen.style.display = "block";
+            checkHit();
+            console.log("Hello from start the game");
+
+       
+    }
+
 }
+
+// function restartTheGame(e) {
+//     e.preventDefault();
+//     if (e.keyCode === 13 && restartGame === true){
+//         restartGame = false;
+//         gameoverScreen.style.display = "none";
+//         gameScreen.style.display = "block";
+//         checkHit();
+//         console.log("Hello from start the game");
+//         // console.log(counter);
+//     }
+
+// }
 
 // if (startGame === false) {
 //     startTheGame();
@@ -43,6 +74,8 @@ function startTheGame(e){
 
 
 window.addEventListener("keydown", startTheGame);
+// window.addEventListener("keydown", restartTheGame);
+
 
 window.addEventListener("keydown", jump);
 window.addEventListener("keydown", colorChange);
@@ -143,8 +176,9 @@ function resetColor(){
 // let noGame = console.log("game not started");
 
 function checkHit() {
-    if (startGame){
-        setInterval(function() {
+    if (startGame || restartGame) {
+    setInterval(function() {
+            // console.log("inside the game")
 
     // console.log("Game Start!")
     let witchTop = parseInt(window.getComputedStyle(witch).getPropertyValue("top"));
@@ -185,9 +219,13 @@ function checkHit() {
         monster.style.animation = "block 1s infinite linear";
         gameScreen.style.display = "none";
         gameoverScreen.style.display = "block";
+        console.log(counter);
         counter = 0;
+        restartGame = false;
 
-        // location.reload();
+
+        console.log("Game Over! Counter is zero now!");
+        clearInterval(checkHit);
     }
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter); //(counter / 100);
 
