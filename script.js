@@ -12,7 +12,7 @@ const keys = [];
 let allowedToJump = true;
 let startGame = false;
 
-console.log(startGame);
+// console.log(startGame);
 
 // document.getElementsByClassName("info-screen").style.display = "block";
 
@@ -25,12 +25,13 @@ function startTheGame(e){
 
     if (e.keyCode === 13) {
     startGame = true;
-    console.log(startGame);
+    // console.log(startGame);
 
     gameScreen.style.display = "block";
     startScreenInfo.style.display = "none";
-    // checkHit;
+    checkHit();
     }
+
 }
 
 // if (startGame === false) {
@@ -39,8 +40,6 @@ function startTheGame(e){
 
 
 window.addEventListener("keydown", startTheGame);
-
-
 
 window.addEventListener("keydown", jump);
 window.addEventListener("keydown", colorChange);
@@ -138,11 +137,13 @@ function resetColor(){
 
 }
 
-let noGame = console.log("game not started");
+// let noGame = console.log("game not started");
 
-let checkHit = (startGame) ? setInterval(function() {
+function checkHit() {
+    if (startGame){
+        setInterval(function() {
 
-    console.log("Game Start!")
+    // console.log("Game Start!")
     let witchTop = parseInt(window.getComputedStyle(witch).getPropertyValue("top"));
     let monsterLeft = parseInt(window.getComputedStyle(monster).getPropertyValue("left"));
 
@@ -183,5 +184,12 @@ let checkHit = (startGame) ? setInterval(function() {
     }
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter); //(counter / 100);
 
-}, 70) : noGame;
+        }, 70)
+
+    }
+
+    else {
+        console.log("game not started");
+    }
+} 
 
