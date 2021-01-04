@@ -4,21 +4,25 @@ const monster = document.getElementById("monster");
 let counter = 0;
 const keys = [];
 
+let allowedToJump = true;
+
 
 window.addEventListener("keydown", jump);
 window.addEventListener("keydown", colorChange);
 window.addEventListener("keyup", colorReset);
 
 function jump(e) {
-    if (e.keyCode === 32){
+    if (e.keyCode === 32 && allowedToJump === true){
         if (witch.classList === "animate") { return }
         witch.classList.add("animate");
+        allowedToJump = false;
         // witch.classList.add("witchOrange");
 
 
         setTimeout(function () {
             witch.classList.remove("animate");
             // witch.classList.remove("witchOrange");
+            allowedToJump = true;
 
         }, 500);
     }
