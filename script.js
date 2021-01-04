@@ -3,6 +3,9 @@ const monster = document.getElementById("monster");
 
 const startScreenInfo = document.getElementById("info-screen");
 const gameScreen =  document.getElementById("screen");
+const gameoverScreen =  document.getElementById("gameover-screen");
+const finalScore = document.getElementById("gameover-final-score");
+
 
 
 
@@ -177,10 +180,14 @@ function checkHit() {
     }
     else if (monsterLeft < 100 && monsterLeft > 50 && witchTop >= 300 && monsterColor !== witchColor){
         monster.style.animation = "none";
-        alert("Game Over. score: " + counter);
-        counter = 0;
+        finalScore.textContent += counter;
+        // alert("Game Over. score: " + counter);
         monster.style.animation = "block 1s infinite linear";
-        location.reload();
+        gameScreen.style.display = "none";
+        gameoverScreen.style.display = "block";
+        counter = 0;
+
+        // location.reload();
     }
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter); //(counter / 100);
 

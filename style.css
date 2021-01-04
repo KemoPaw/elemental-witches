@@ -59,6 +59,19 @@ h1 {
 
 }
 
+#gameover-screen {
+    /* display: block; */
+    display: none;
+    
+    margin: auto;
+    width: 1200px;
+    height: 500px;
+    border: #74b5f0 2px solid;
+    background-color: #393f6d;
+    overflow: hidden;
+
+}
+
 
 
 
