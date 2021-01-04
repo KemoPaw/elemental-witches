@@ -16,18 +16,26 @@ function jump(e) {
         if (witch.classList === "animate") { return }
         witch.classList.add("animate");
         allowedToJump = false;
+        // console.log(allowedToJump);
         // witch.classList.add("witchOrange");
 
 
         setTimeout(function () {
             witch.classList.remove("animate");
             // witch.classList.remove("witchOrange");
-            allowedToJump = true;
+
 
         }, 500);
     }
    
 }
+
+let checkJump = setInterval(function() {
+    if (allowedToJump == false){
+        allowedToJump = true;
+    }
+
+}, 500);
 
 function colorReset() {
     witch.classList.remove("witchMagenta");
