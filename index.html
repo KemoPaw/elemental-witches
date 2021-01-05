@@ -11,14 +11,14 @@
 <body>
 
     <h1>Elemental Witches</h1>   
-    <div clss="game-header">
+    <div class="game-header">
         <div class="instructionDiv">
             <p class="instructions">Hit all the squares coming your way, before they hit you! (Use "SPACE" to jump if needed) </p>
             <div>
                 <div class=instructButton>
                     <span class="monMagenta">"A"</span>
                     <span class="monYellow">"S"</span>
-                <span class="monCyan">"D"</span>
+                    <span class="monCyan">"D"</span>
                 </div>  
                    <br/>
                 <div class=instructButton>
@@ -30,16 +30,45 @@
             
         </div>
         <br/>
-        
-        <div class="screen">
-            <p class="score">Score: <span id="scoreSpan"></span></p>
-        
-            <!-- <div id="witch"></div> -->
-            <img id="witch" src="witch-pixel2.png"></img>
-        
-            <div id="monster"></div>
-            <div id="floor"></div>
-        
+
+        <div id="startScreen">
+            <div id="info-screen">
+                <div class="instructionDiv">
+                    <p class="instructions">Hit all the squares coming your way, before they hit you! (Use "SPACE" to jump if needed)
+                    </p>
+                    <div>
+                        <div class=instructButton>
+                            <span class="monMagenta">"A"</span>
+                            <span class="monYellow">"S"</span>
+                            <span class="monCyan">"D"</span>
+                        </div>
+                        <br />
+                        <div class=instructButton>
+                            <span class="monOrange">"Z"</span>
+                            <span class="monGreen">"X"</span>
+                            <span class="monPurple">"C"</span>
+                        </div>
+                    </div>
+                
+                </div>
+                <p>press the ENTER key to start!</p>
+            </div>
+
+            <div id="screen">
+                <p class="score">Score: <span id="scoreSpan"></span></p>
+            
+                <!-- <div id="witch"></div> -->
+                <img id="witch" src="witch-pixel2.png"></img>
+            
+                <div id="monster"></div>
+                <div id="floor"></div>
+            </div>
+
+            <div id="gameover-screen">
+                <p>Final Score is: &nbsp; <span id="gameover-final-score">0</span></p>
+                <p>Press ENTER to play again!</p>
+
+            </div>
         </div>
     </div>
   
