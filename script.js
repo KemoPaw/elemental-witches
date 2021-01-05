@@ -37,20 +37,6 @@ function startTheGame(e){
     checkHit();
     }
 
-    // else if (e.keyCode === 13){
-       
-            // restartGame = true;
-            // startGame = true;
-            // startGame = true;
-
-            // startGame = true;
-
-            // gameoverScreen.style.display = "none";
-            // gameScreen.style.display = "block";
-            // checkHit();
-            // console.log("Hello from start the game");
-    // }
-
 }
 
 function restartTheGame(e) { // PRESS R
@@ -64,12 +50,7 @@ function restartTheGame(e) { // PRESS R
         // console.log(allowedToJump);
         finalScore.textContent = 0;
         console.log(finalScore.textContent);
-        // resetEventListener();
-        // allowedToJump = true;
-        // console.log(witchTop);
-    // console.log(monsterLeft);
-
-
+        resetEventListener();
         checkHit();
         // location.reload();
         console.log("Hello from restart the game");
@@ -198,7 +179,10 @@ function resetColor(){
 
 function checkHit() {
     if (startGame || restartGame) {
-    setInterval(function() {
+
+    restartGame = false;
+
+    let collision = setInterval(function() {
             // console.log("inside the game")
 
     // console.log("Game Start!")
@@ -207,26 +191,15 @@ function checkHit() {
     
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
 
-    // console.log(finalScore.textContent);
-
-    // console.log(monster.style.animation);
-    // console.log(witch.style)
-
-
-    if (counter === 0) {
-        monster.classList.add("monsterMagenta");
-        // console.log("counter is zero");
-        // console.log(monster.style.animation);
-        
-        // if (monster.style.animation === "none") {
-        //     monster.style.animation = "0s ease 0s 1 normal none running none";
-        // }
-    }
+    // if (counter === 0) {
+    //     monster.classList.add("monsterMagenta");
+    //     console.log("Monster bg color is shown to be magenta");
+    // }
 
     let monsterColor = window.getComputedStyle(monster).backgroundColor;
     let witchColor = window.getComputedStyle(witch).backgroundColor;
 
-    if (monsterLeft < 100 && monsterLeft > 0 && witchTop >= 300  && monsterColor === witchColor){
+    if (monsterLeft < 100 && monsterLeft > 0 && witchTop >= 300  && monsterColor === witchColor ){
 
         counter+=1;
 
@@ -235,7 +208,7 @@ function checkHit() {
             let newColor = addColor();
             monster.classList.add(newColor);
             monsterColor = newColor;
-        console.log("baby levels");
+            console.log("baby levels");
 
         }
 
@@ -247,10 +220,10 @@ function checkHit() {
             console.log("adv levels");
 
         }
-       
     }
     else if (monsterLeft < 100 && monsterLeft > 50 && witchTop >= 300 && monsterColor !== witchColor){
         // console.log(monster.style.animation);
+        console.log(monsterColor);
 
         // monster.style.animation = "none";
         // console.log(monster.style.animation);
@@ -271,6 +244,7 @@ function checkHit() {
         console.log("Game Over! Counter is zero now!");
         resetColor();
         colorReset();
+        clearInterval(collision);
 
 
         // clearInterval(checkHit);
