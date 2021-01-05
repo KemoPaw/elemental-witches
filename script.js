@@ -61,11 +61,10 @@ function restartTheGame(e) { // PRESS R
         gameoverScreen.style.display = "none";
         gameScreen.style.display = "block";
 
-        // resetEventListener();
         // console.log(allowedToJump);
         finalScore.textContent = 0;
         console.log(finalScore.textContent);
-
+        // resetEventListener();
         // allowedToJump = true;
         // console.log(witchTop);
     // console.log(monsterLeft);
@@ -82,11 +81,11 @@ function restartTheGame(e) { // PRESS R
 
 function resetEventListener() {
 
-    window.removeEventListener("keydown", startTheGame);
-    window.removeEventListener("keydown", restartTheGame);
-    window.removeEventListener("keydown", jump);
-    window.removeEventListener("keydown", colorChange);
-    window.removeEventListener("keyup", colorReset);
+    // window.removeEventListener("keydown", startTheGame);
+    // window.removeEventListener("keydown", restartTheGame);
+    // window.removeEventListener("keydown", jump);
+    // window.removeEventListener("keydown", colorChange);
+    // window.removeEventListener("keyup", colorReset);
     colorReset();
     resetColor();
 
@@ -208,7 +207,7 @@ function checkHit() {
     
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
 
-        console.log(finalScore.textContent);
+    // console.log(finalScore.textContent);
 
     // console.log(monster.style.animation);
     // console.log(witch.style)
@@ -219,15 +218,16 @@ function checkHit() {
         // console.log("counter is zero");
         // console.log(monster.style.animation);
         
-        if (monster.style.animation === "none") {
-            monster.style.animation = "0s ease 0s 1 normal none running none";
-        }
+        // if (monster.style.animation === "none") {
+        //     monster.style.animation = "0s ease 0s 1 normal none running none";
+        // }
     }
 
     let monsterColor = window.getComputedStyle(monster).backgroundColor;
     let witchColor = window.getComputedStyle(witch).backgroundColor;
 
     if (monsterLeft < 100 && monsterLeft > 0 && witchTop >= 300  && monsterColor === witchColor){
+
         counter+=1;
 
         if (monsterColor && counter >= 1) {
@@ -250,10 +250,14 @@ function checkHit() {
        
     }
     else if (monsterLeft < 100 && monsterLeft > 50 && witchTop >= 300 && monsterColor !== witchColor){
-        console.log(monster.style.animation);
+        // console.log(monster.style.animation);
 
         // monster.style.animation = "none";
-        console.log(monster.style.animation);
+        // console.log(monster.style.animation);
+        console.log(monsterLeft);
+        console.log(witchTop);
+        console.log("monster color =" + monsterColor);
+        console.log("witch color =" + witchColor);
         finalScore.textContent = counter;
         // alert("Game Over. score: " + counter);
         // monster.style.animation = "block 1s infinite linear";
@@ -265,6 +269,10 @@ function checkHit() {
 
 
         console.log("Game Over! Counter is zero now!");
+        resetColor();
+        colorReset();
+
+
         // clearInterval(checkHit);
 
     }
