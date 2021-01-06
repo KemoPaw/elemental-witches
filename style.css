@@ -59,11 +59,30 @@ h1 {
 
 }
 
+.instructions-info{
+    color: white;
+    /* font-size: 20px; */
+
+    font-size: 35px;
+    text-align: center;
+
+}
+
+.instructButton-info {
+      padding: 7px;
+    text-align: center;
+
+}
+
+.instruct-info-buttons-div {
+    padding: 25px;
+}
+
 #gameover-screen {
     /* display: block; */
     display: none;
     
-    margin: auto;
+    margin: 100px;
     width: 1200px;
     height: 500px;
     border: #74b5f0 2px solid;
@@ -172,6 +191,7 @@ h1 {
   
  
 }
+
 .instructions {
     font-size: 25px;;
     padding: 5px;
@@ -235,4 +255,22 @@ h1 {
    padding: 5px;
    color: #191947;
 
+}
+
+.monWhite {
+        background-color: white!important;
+    font-size: 20px;
+     border: white 2px solid;
+   padding: 5px;
+   color: #191947;
+
+}
+
+.monBlack {
+        background-color: black!important;
+    font-size: 20px;
+     border: white 2px solid;
+   padding: 5px;
+   color: white;
+    
 }
