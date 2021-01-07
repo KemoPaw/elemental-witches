@@ -60,12 +60,22 @@ h1 {
 }
 
 .instructions-info{
-    font-size: 25px;;
+    font-size: 25px;
     padding: 5px;
     color: white;
     text-align: center;
+}
 
+.gameover-info{
+    font-size: 40px;
+    padding: 10px;
+    /* margin: 5px; */
+    color: white;
+    text-align: center;
+}
 
+.gameover-padding {
+    height: 35px;
 }
 
 .instructButton-info {
@@ -82,13 +92,16 @@ h1 {
 
 #gameover-screen {
     /* display: block; */
+    /* margin-top: 50px; */
     display: none;
     
     margin: auto;
     width: 1200px;
     height: 500px;
     border: #74b5f0 2px solid;
-    background-color: #393f6d;
+    /* background-color: #393f6d; */
+    background-color: #2A2E5C;
+
     overflow: hidden;
 
 }
@@ -118,6 +131,9 @@ h1 {
 
 #gameover-screen-witch {
     /* margin: 15px; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+
     height: 240px;
     width: 120px;
     padding-left: 550px;
