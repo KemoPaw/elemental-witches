@@ -30,15 +30,15 @@ function startTheGame(e){
     if (e.keyCode === 13 && startGame === false) {
     startGame = true;
     // console.log(startGame);
-    console.log(startScreenInfo.style.display);
+    // console.log(startScreenInfo.style.display);
 
 
     startScreenInfo.style.display = "none";
-    console.log(startScreenInfo.style.display);
-    console.log(gameScreen.style.display);
+    // console.log(startScreenInfo.style.display);
+    // console.log(gameScreen.style.display);
 
     gameScreen.style.display = "block";
-    console.log("Start the first game!")
+    // console.log("Start the first game!")
     checkHit();
     }
 
@@ -54,11 +54,11 @@ function restartTheGame(e) { // PRESS R
 
         // console.log(allowedToJump);
         finalScore.textContent = 0;
-        console.log(finalScore.textContent);
+        // console.log(finalScore.textContent);
         resetEventListener();
         checkHit();
         // location.reload();
-        console.log("Hello from restart the game");
+        // console.log("Hello from restart the game");
         // console.log(counter);
 
     }
@@ -205,13 +205,13 @@ function resetColor(){
 
 function checkHit() {
     if (startGame || restartGame) {
-    console.log("inside checkhit");
+    // console.log("inside checkhit");
 
     restartGame = false;
 
     let collision = setInterval(function() {
 
-    console.log("inside colli");
+    // console.log("inside colli");
 
             // console.log("inside the game")
 
@@ -223,7 +223,7 @@ function checkHit() {
 
     if (counter === 0) {
         monster.classList.add("monsterMagenta");
-        console.log("Monster bg color is shown to be magenta");
+        // console.log("Monster bg color is shown to be magenta");
     }
 
     let monsterColor = window.getComputedStyle(monster).backgroundColor;
@@ -238,7 +238,7 @@ function checkHit() {
             let newColor = addColor();
             monster.classList.add(newColor);
             monsterColor = newColor;
-            console.log("baby levels");
+            // console.log("baby levels");
 
         }
 
@@ -247,7 +247,7 @@ function checkHit() {
             let newAdvColor = addAdvColor();
             monster.classList.add(newAdvColor);
             monsterColor = newAdvColor;
-            console.log("adv levels");
+            // console.log("adv levels");
 
         }
 
@@ -256,31 +256,31 @@ function checkHit() {
             let newDiffColor = addDiffColor();
             monster.classList.add(newDiffColor);
             monsterColor = newDiffColor;
-            console.log("diff levels");
+            // console.log("diff levels");
 
         }
     }
     else if (monsterLeft < 100 && monsterLeft > 50 && witchTop >= 300 && monsterColor !== witchColor){
         // console.log(monster.style.animation);
-        console.log(monsterColor);
+        // console.log(monsterColor);
 
         // monster.style.animation = "none";
         // console.log(monster.style.animation);
-        console.log(monsterLeft);
-        console.log(witchTop);
-        console.log("monster color =" + monsterColor);
-        console.log("witch color =" + witchColor);
+        // console.log(monsterLeft);
+        // console.log(witchTop);
+        // console.log("monster color =" + monsterColor);
+        // console.log("witch color =" + witchColor);
         finalScore.textContent = counter;
         // alert("Game Over. score: " + counter);
         // monster.style.animation = "block 1s infinite linear";
         gameScreen.style.display = "none";
         gameoverScreen.style.display = "block";
-        console.log(counter);
+        // console.log(counter);
         counter = 0;
         restartGame = true;
 
 
-        console.log("Game Over! Counter is zero now!");
+        // console.log("Game Over! Counter is zero now!");
         resetColor();
         colorReset();
         clearInterval(collision);
@@ -296,7 +296,7 @@ function checkHit() {
     }
 
     else {
-        console.log("game not started");
+        // console.log("game not started");
     }
 } 
 
