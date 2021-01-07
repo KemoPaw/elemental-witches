@@ -30,9 +30,14 @@ function startTheGame(e){
     if (e.keyCode === 13 && startGame === false) {
     startGame = true;
     // console.log(startGame);
+    console.log(startScreenInfo.style.display);
+
+
+    startScreenInfo.style.display = "none";
+    console.log(startScreenInfo.style.display);
+    console.log(gameScreen.style.display);
 
     gameScreen.style.display = "block";
-    startScreenInfo.style.display = "none";
     console.log("Start the first game!")
     checkHit();
     }
@@ -41,7 +46,7 @@ function startTheGame(e){
 
 function restartTheGame(e) { // PRESS R
     e.preventDefault();
-    if (e.keyCode === 82){
+    if (e.keyCode === 82 ){
         restartGame = true;
 
         gameoverScreen.style.display = "none";
@@ -179,10 +184,14 @@ function resetColor(){
 
 function checkHit() {
     if (startGame || restartGame) {
+    console.log("inside checkhit");
 
     restartGame = false;
 
     let collision = setInterval(function() {
+
+    console.log("inside colli");
+
             // console.log("inside the game")
 
     // console.log("Game Start!")

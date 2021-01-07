@@ -54,35 +54,37 @@ h1 {
     width: 1200px;
     height: 500px;
     border: #74b5f0 2px solid;
-    background-color: #393f6d;
+    background-color: #2A2E5C;
     overflow: hidden;
 
 }
 
 .instructions-info{
+    font-size: 25px;;
+    padding: 5px;
     color: white;
-    /* font-size: 20px; */
-
-    font-size: 35px;
     text-align: center;
+
 
 }
 
 .instructButton-info {
-      padding: 7px;
+    padding: 7px;
     text-align: center;
-
+    /* background-color: #2A2E5C; */
 }
 
 .instruct-info-buttons-div {
-    padding: 25px;
+    /* padding: 25px; */
+    /* background-color: #2A2E5C; */
+
 }
 
 #gameover-screen {
     /* display: block; */
     display: none;
     
-    margin: 100px;
+    margin: auto;
     width: 1200px;
     height: 500px;
     border: #74b5f0 2px solid;
