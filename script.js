@@ -184,7 +184,7 @@ function addAdvColor() {
 
 function addDiffColor() {
     const randDiffMonsterColors = ["monsterMagenta", "monsterYellow", "monsterCyan", "monsterOrange", "monsterGreen", "monsterPurple", "monsterWhite", "monsterBlack"];
-    let randomDiffColor = randAdvMonsterColors[Math.floor(Math.random() * randDiffMonsterColors.length)];
+    let randomDiffColor = randDiffMonsterColors[Math.floor(Math.random() * randDiffMonsterColors.length)];
     // console.log(randomColor);
     return randomDiffColor;
 }
@@ -221,10 +221,10 @@ function checkHit() {
     
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
 
-    // if (counter === 0) {
-    //     monster.classList.add("monsterMagenta");
-    //     console.log("Monster bg color is shown to be magenta");
-    // }
+    if (counter === 0) {
+        monster.classList.add("monsterMagenta");
+        console.log("Monster bg color is shown to be magenta");
+    }
 
     let monsterColor = window.getComputedStyle(monster).backgroundColor;
     let witchColor = window.getComputedStyle(witch).backgroundColor;
@@ -233,7 +233,7 @@ function checkHit() {
 
         counter+=1;
 
-        if (monsterColor && counter >= 1) {
+        if (monsterColor && counter >= 1 && counter < 7 ) {
             resetColor();
             let newColor = addColor();
             monster.classList.add(newColor);
@@ -242,7 +242,7 @@ function checkHit() {
 
         }
 
-        if (monsterColor && counter >= 7) {
+        if (monsterColor && counter >= 7 && counter < 13) {
             resetColor();
             let newAdvColor = addAdvColor();
             monster.classList.add(newAdvColor);
