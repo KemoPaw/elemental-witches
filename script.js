@@ -120,6 +120,8 @@ function colorReset() {
     witch.classList.remove("witchOrange");
     witch.classList.remove("witchGreen");
     witch.classList.remove("witchPurple");
+    witch.classList.remove("witchWhite");
+    witch.classList.remove("witchBlack");
 
 }
 
@@ -154,6 +156,16 @@ function colorChange(e) {
         witch.classList.add("witchPurple");
 
     }
+
+    if (e.keyCode === 86) {
+        witch.classList.add("witchWhite");
+
+    }
+
+    if (e.keyCode === 66) {
+        witch.classList.add("witchBlack");
+
+    }
 }
 
 function addColor() {
@@ -170,6 +182,13 @@ function addAdvColor() {
     return randomAdvColor;
 }
 
+function addDiffColor() {
+    const randDiffMonsterColors = ["monsterMagenta", "monsterYellow", "monsterCyan", "monsterOrange", "monsterGreen", "monsterPurple", "monsterWhite", "monsterBlack"];
+    let randomDiffColor = randAdvMonsterColors[Math.floor(Math.random() * randDiffMonsterColors.length)];
+    // console.log(randomColor);
+    return randomDiffColor;
+}
+
 function resetColor(){
     monster.classList.remove("monsterMagenta");
     monster.classList.remove("monsterYellow");
@@ -177,6 +196,8 @@ function resetColor(){
     monster.classList.remove("monsterOrange");
     monster.classList.remove("monsterPurple");
     monster.classList.remove("monsterGreen");
+    monster.classList.remove("monsterWhite");
+    monster.classList.remove("monsterBlack");
 
 }
 
@@ -221,12 +242,21 @@ function checkHit() {
 
         }
 
-        if (monsterColor && counter >= 5) {
+        if (monsterColor && counter >= 7) {
             resetColor();
             let newAdvColor = addAdvColor();
             monster.classList.add(newAdvColor);
             monsterColor = newAdvColor;
             console.log("adv levels");
+
+        }
+
+        if (monsterColor && counter >= 13) {
+            resetColor();
+            let newDiffColor = addDiffColor();
+            monster.classList.add(newDiffColor);
+            monsterColor = newDiffColor;
+            console.log("diff levels");
 
         }
     }
