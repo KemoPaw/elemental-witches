@@ -54,45 +54,56 @@ h1 {
     width: 1200px;
     height: 500px;
     border: #74b5f0 2px solid;
-    background-color: #393f6d;
+    background-color: #2A2E5C;
     overflow: hidden;
 
 }
 
 .instructions-info{
+    font-size: 25px;
+    padding: 5px;
     color: white;
-    /* font-size: 20px; */
-
-    font-size: 35px;
     text-align: center;
+}
 
+.gameover-info{
+    font-size: 40px;
+    padding: 10px;
+    /* margin: 5px; */
+    color: white;
+    text-align: center;
+}
+
+.gameover-padding {
+    height: 35px;
 }
 
 .instructButton-info {
-      padding: 7px;
+    padding: 7px;
     text-align: center;
-
+    /* background-color: #2A2E5C; */
 }
 
 .instruct-info-buttons-div {
-    padding: 25px;
+    /* padding: 25px; */
+    /* background-color: #2A2E5C; */
+
 }
 
 #gameover-screen {
     /* display: block; */
+    /* margin-top: 50px; */
     display: none;
     
-    margin: 100px;
+    margin: auto;
     width: 1200px;
     height: 500px;
     border: #74b5f0 2px solid;
-    background-color: #393f6d;
+    /* background-color: #393f6d; */
+    background-color: #2A2E5C;
     overflow: hidden;
 
 }
-
-
-
 
 #witch {
     height: 100px;
@@ -101,6 +112,39 @@ h1 {
     left: 50px;
     position: relative;
     background-color:rgba(173, 168, 173, 0);
+}
+
+#start-screen-witch {
+    margin: 15px;
+    height: 240px;
+    width: 120px;
+    padding-left: 500px;
+    padding-right: 500px;
+
+    /* position: relative; */
+    /* background-color:rgba(173, 168, 173, 0); */
+    /* background-color: #393f6d; */
+    background-color: #2A2E5C;
+    border: 1px transparent solid;
+}
+
+#gameover-screen-witch {
+    /* margin: 15px; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    height: 240px;
+    width: 120px;
+    padding-left: 550px;
+    padding-right: 600px;
+
+    /* position: relative; */
+    /* background-color:rgba(173, 168, 173, 0); */
+    /* background-color: #393f6d; */
+    background-color: #2A2E5C;
+    border: 1px transparent solid;
+    -webkit-filter: grayscale(100%);
+  filter: grayscale(50%);
 }
 
 .witchStill {
@@ -129,6 +173,14 @@ h1 {
 
 .witchCyan {
     background-color: cyan!important;
+}
+
+.witchWhite {
+    background-color: white!important;
+}
+
+.witchBlack {
+    background-color: black!important;
 }
 
 .animate{
@@ -184,6 +236,14 @@ h1 {
 
 .monsterPurple {
     background-color: #A25DFF!important;
+}
+
+.monsterWhite {
+    background-color: white!important;
+}
+
+.monsterBlack {
+    background-color: black!important;
 }
 
 

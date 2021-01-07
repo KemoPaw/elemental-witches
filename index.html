@@ -7,6 +7,7 @@
     <title>Elemental Witches</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="witch.ico">
 </head>
 <body>
 
@@ -35,34 +36,30 @@
 
         <div id="startScreen">
             <div id="info-screen">
-                <div class="instructionDiv">
-                    <p class="instructions-info">Hit all the squares coming your way, before they hit you! </p>
-                    <p class="instructions-info">
-                        (Use "SPACE" to jump if needed)
-                    </p>
-                    <div class="instruct-info-buttons-div">
-                        <div class="instructButton-info">
-                            <span class="monMagenta">"A"</span>
-                            <span class="monYellow">"S"</span>
-                            <span class="monCyan">"D"</span>
-                        </div>
-                        <br />
-                        <div class="instructButton-info">
-                            <span class="monOrange">"Z"</span>
-                            <span class="monGreen">"X"</span>
-                            <span class="monPurple">"C"</span>
-                            <span class="monWhite">"V"</span>
-                            <span class="monBlack">"B"</span>
-                        </div>
-                        <!-- <br />
-                        <div class="instructButton-info">
-                            <span class="monWhite">"V"</span>
-                            <span class="monBlack">"B"</span>
-                        </div>
-                    </div> -->
-                
+                        <p class="instructions-info">Hit all the squares coming your way, before they hit you! </p>
+                        <p class="instructions-info">(Use "SPACE" to jump if needed)</p>
+                <div>
+                    <div class=instructButton>
+                        <span class="monMagenta">"A"</span>
+                        <span class="monYellow">"S"</span>
+                        <span class="monCyan">"D"</span>
+                    </div>
+                    <br />
+                    <div class=instructButton>
+                        <span class="monOrange">"Z"</span>
+                        <span class="monGreen">"X"</span>
+                        <span class="monPurple">"C"</span>
+                        <span class="monWhite">"V"</span>
+                        <span class="monBlack">"B"</span>
+                    </div>
                 </div>
-                <p class="instructInfo">press the ENTER key to start!</p>
+                <img id="start-screen-witch" src="witch-pixel2.png"></img>
+
+                <p class="instructions-info">The game will ramp up in difficulty as you go on!</p>
+
+
+                <p class="instructions-info">Press the ENTER key to start!</p> 
+            
             </div>
 
             <div id="screen">
@@ -76,8 +73,13 @@
             </div>
 
             <div id="gameover-screen">
-                <p>Final Score is: &nbsp; <span id="gameover-final-score">0</span></p>
-                <p>Press "R" to play again!</p>
+                <p class="gameover-info">Final Score: &nbsp; <span id="gameover-final-score">0</span></p>
+                <img id="gameover-screen-witch" src="witch-pixel2.png"></img>
+                <div class="gameover-padding"></div>
+                <p class="gameover-info">Please feel free to check out the links below, thank you for playing!</p>
+
+
+                <p class="gameover-info">Press "R" to Play Again!</p>
 
             </div>
         </div>

@@ -30,9 +30,14 @@ function startTheGame(e){
     if (e.keyCode === 13 && startGame === false) {
     startGame = true;
     // console.log(startGame);
+    console.log(startScreenInfo.style.display);
+
+
+    startScreenInfo.style.display = "none";
+    console.log(startScreenInfo.style.display);
+    console.log(gameScreen.style.display);
 
     gameScreen.style.display = "block";
-    startScreenInfo.style.display = "none";
     console.log("Start the first game!")
     checkHit();
     }
@@ -41,7 +46,7 @@ function startTheGame(e){
 
 function restartTheGame(e) { // PRESS R
     e.preventDefault();
-    if (e.keyCode === 82){
+    if (e.keyCode === 82 ){
         restartGame = true;
 
         gameoverScreen.style.display = "none";
@@ -115,6 +120,8 @@ function colorReset() {
     witch.classList.remove("witchOrange");
     witch.classList.remove("witchGreen");
     witch.classList.remove("witchPurple");
+    witch.classList.remove("witchWhite");
+    witch.classList.remove("witchBlack");
 
 }
 
@@ -149,6 +156,16 @@ function colorChange(e) {
         witch.classList.add("witchPurple");
 
     }
+
+    if (e.keyCode === 86) {
+        witch.classList.add("witchWhite");
+
+    }
+
+    if (e.keyCode === 66) {
+        witch.classList.add("witchBlack");
+
+    }
 }
 
 function addColor() {
@@ -165,6 +182,13 @@ function addAdvColor() {
     return randomAdvColor;
 }
 
+function addDiffColor() {
+    const randDiffMonsterColors = ["monsterMagenta", "monsterYellow", "monsterCyan", "monsterOrange", "monsterGreen", "monsterPurple", "monsterWhite", "monsterBlack"];
+    let randomDiffColor = randDiffMonsterColors[Math.floor(Math.random() * randDiffMonsterColors.length)];
+    // console.log(randomColor);
+    return randomDiffColor;
+}
+
 function resetColor(){
     monster.classList.remove("monsterMagenta");
     monster.classList.remove("monsterYellow");
@@ -172,6 +196,8 @@ function resetColor(){
     monster.classList.remove("monsterOrange");
     monster.classList.remove("monsterPurple");
     monster.classList.remove("monsterGreen");
+    monster.classList.remove("monsterWhite");
+    monster.classList.remove("monsterBlack");
 
 }
 
@@ -179,10 +205,14 @@ function resetColor(){
 
 function checkHit() {
     if (startGame || restartGame) {
+    console.log("inside checkhit");
 
     restartGame = false;
 
     let collision = setInterval(function() {
+
+    console.log("inside colli");
+
             // console.log("inside the game")
 
     // console.log("Game Start!")
@@ -191,10 +221,10 @@ function checkHit() {
     
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
 
-    // if (counter === 0) {
-    //     monster.classList.add("monsterMagenta");
-    //     console.log("Monster bg color is shown to be magenta");
-    // }
+    if (counter === 0) {
+        monster.classList.add("monsterMagenta");
+        console.log("Monster bg color is shown to be magenta");
+    }
 
     let monsterColor = window.getComputedStyle(monster).backgroundColor;
     let witchColor = window.getComputedStyle(witch).backgroundColor;
@@ -203,7 +233,7 @@ function checkHit() {
 
         counter+=1;
 
-        if (monsterColor && counter >= 1) {
+        if (monsterColor && counter >= 1 && counter < 7 ) {
             resetColor();
             let newColor = addColor();
             monster.classList.add(newColor);
@@ -212,12 +242,21 @@ function checkHit() {
 
         }
 
-        if (monsterColor && counter >= 5) {
+        if (monsterColor && counter >= 7 && counter < 13) {
             resetColor();
             let newAdvColor = addAdvColor();
             monster.classList.add(newAdvColor);
             monsterColor = newAdvColor;
             console.log("adv levels");
+
+        }
+
+        if (monsterColor && counter >= 13) {
+            resetColor();
+            let newDiffColor = addDiffColor();
+            monster.classList.add(newDiffColor);
+            monsterColor = newDiffColor;
+            console.log("diff levels");
 
         }
     }
