@@ -105,6 +105,24 @@ h1 {
     background-color:rgba(173, 168, 173, 0);
 }
 
+#start-screen-witch {
+    margin: 15px;
+    height: 240px;
+    width: 120px;
+    padding-left: 500px;
+    padding-right: 500px;
+
+    /* position: relative; */
+    /* background-color:rgba(173, 168, 173, 0); */
+    /* background-color: #393f6d; */
+    background-color: #2A2E5C;
+    border: 1px transparent solid;
+
+    /* align-items: center; */
+
+
+}
+
 .witchStill {
     background-color: mediumpurple!important;
 }
