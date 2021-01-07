@@ -37,6 +37,7 @@ h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 #screen {
     display: none;
     margin: auto;
@@ -47,9 +48,34 @@ h1 {
     overflow: hidden;
 }
 
+#about-me-links {
+    /* display: block; */
+    margin: auto;
+    width: 1200px;
+    height: 50px;
+        display: flex;
+    /* // display: block;
+    // direction: rtl; */
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+
+}
+
+.witch-aboutme-footer > a {
+    margin: 10px;
+}
+
+.witch-aboutme-footer > * {
+   color: #757ac9;
+}
+
+.witch-aboutme-footer > *:hover {
+   color: #c5c9fa;
+}
+
 #info-screen {
     display: block;
-
     margin: auto;
     width: 1200px;
     height: 500px;
@@ -75,7 +101,7 @@ h1 {
 }
 
 .gameover-padding {
-    height: 35px;
+    height: 40px;
 }
 
 .instructButton-info {
@@ -84,11 +110,6 @@ h1 {
     /* background-color: #2A2E5C; */
 }
 
-.instruct-info-buttons-div {
-    /* padding: 25px; */
-    /* background-color: #2A2E5C; */
-
-}
 
 #gameover-screen {
     /* display: block; */
