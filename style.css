@@ -196,8 +196,8 @@ h1 {
     background-color: cyan!important;
 }
 
-.witchWhite {
-    background-color: white!important;
+.witchGrey {
+    background-color: 	rgb(128,128,128)!important;
 }
 
 .witchBlack {
@@ -216,10 +216,11 @@ h1 {
 }
 
 #monster {
-    background-color: magenta;
+    /* background-color: magenta; */
+    background-color:rgba(173, 168, 173, 0);
     height: 50px;
     width: 50px;
-    top: 300px;
+    top: 355px;
     left: 1150px;
     position: relative;
     animation: monster 1.5s infinite linear;
@@ -259,8 +260,8 @@ h1 {
     background-color: #A25DFF!important;
 }
 
-.monsterWhite {
-    background-color: white!important;
+.monsterGrey {
+    background-color: 	rgb(128,128,128)!important;
 }
 
 .monsterBlack {
@@ -338,12 +339,13 @@ h1 {
 
 }
 
-.monWhite {
-        background-color: white!important;
+.monGrey {
+        background-color: 	rgb(128,128,128)!important;
     font-size: 20px;
      border: white 2px solid;
    padding: 5px;
-   color: #191947;
+     color: white;
+
 
 }
 
