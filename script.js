@@ -45,8 +45,9 @@ function startTheGame(e){
 }
 
 function restartTheGame(e) { // PRESS R
+
     e.preventDefault();
-    if (e.keyCode === 82 ){
+    if (e.keyCode === 82 && startGame == true){
         restartGame = true;
 
         gameoverScreen.style.display = "none";
@@ -120,7 +121,7 @@ function colorReset() {
     witch.classList.remove("witchOrange");
     witch.classList.remove("witchGreen");
     witch.classList.remove("witchPurple");
-    witch.classList.remove("witchWhite");
+    witch.classList.remove("witchGrey");
     witch.classList.remove("witchBlack");
 
 }
@@ -158,7 +159,7 @@ function colorChange(e) {
     }
 
     if (e.keyCode === 86) {
-        witch.classList.add("witchWhite");
+        witch.classList.add("witchGrey");
 
     }
 
@@ -183,7 +184,7 @@ function addAdvColor() {
 }
 
 function addDiffColor() {
-    const randDiffMonsterColors = ["monsterMagenta", "monsterYellow", "monsterCyan", "monsterOrange", "monsterGreen", "monsterPurple", "monsterWhite", "monsterBlack"];
+    const randDiffMonsterColors = ["monsterMagenta", "monsterYellow", "monsterCyan", "monsterOrange", "monsterGreen", "monsterPurple", "monsterGrey", "monsterBlack"];
     let randomDiffColor = randDiffMonsterColors[Math.floor(Math.random() * randDiffMonsterColors.length)];
     // console.log(randomColor);
     return randomDiffColor;
@@ -196,7 +197,7 @@ function resetColor(){
     monster.classList.remove("monsterOrange");
     monster.classList.remove("monsterPurple");
     monster.classList.remove("monsterGreen");
-    monster.classList.remove("monsterWhite");
+    monster.classList.remove("monsterGrey");
     monster.classList.remove("monsterBlack");
 
 }
