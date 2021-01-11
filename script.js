@@ -7,7 +7,7 @@ const gameoverScreen =  document.getElementById("gameover-screen");
 const finalScore = document.getElementById("gameover-final-score");
 
 
-
+let gameSound = new Audio('bensound-smile.mp3');
 
 let counter = 0;
 const keys = [];
@@ -15,6 +15,8 @@ const keys = [];
 let allowedToJump = true;
 let startGame = false;
 let restartGame = false;
+let playSound = true;
+
 
 // console.log(startGame);
 
@@ -88,7 +90,21 @@ window.addEventListener("keydown", restartTheGame);
 window.addEventListener("keydown", jump);
 window.addEventListener("keydown", colorChange);
 window.addEventListener("keyup", colorReset);
+window.addEventListener("keydown", musicToggle);
 
+function musicToggle(e) {
+
+    if(e.keyCode === 77 && playSound === true) {
+        gameSound.pause();
+        gameSound.currentTime = 0;
+        playSound = false;
+    }
+
+    else if (e.keyCode === 77 && playSound === false) {
+        gameSound.play();
+        playSound = true;
+    }
+}
 function jump(e) {
     if (e.keyCode === 32 && allowedToJump === true){
         if (witch.classList === "animate") { return }
@@ -209,6 +225,11 @@ function checkHit() {
     // console.log("inside checkhit");
 
     restartGame = false;
+    if (playSound === true) {
+        gameSound.play();
+        // playSound = false;
+    }
+    
 
     let collision = setInterval(function() {
 
