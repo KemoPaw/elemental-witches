@@ -226,8 +226,7 @@ function checkHit() {
 
     restartGame = false;
     if (playSound === true) {
-        gameSound.play();
-        // playSound = false;
+        // gameSound.play();
     }
     
 
@@ -240,18 +239,24 @@ function checkHit() {
     // console.log("Game Start!")
     let witchTop = parseInt(window.getComputedStyle(witch).getPropertyValue("top"));
     let monsterLeft = parseInt(window.getComputedStyle(monster).getPropertyValue("left"));
+    // let witchLeft = parseInt(window.getComputedStyle(witch).getPropertyValue("left"));
+
+   
+
     
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
 
     if (counter === 0) {
         monster.classList.add("monsterMagenta");
-        // console.log("Monster bg color is shown to be magenta");
+
     }
 
     let monsterColor = window.getComputedStyle(monster).backgroundColor;
     let witchColor = window.getComputedStyle(witch).backgroundColor;
 
-    if (monsterLeft < 100 && monsterLeft > 0 && witchTop >= 300  && monsterColor === witchColor ){
+  
+
+    if (monsterLeft < 75 && witchTop >= 300  && monsterColor === witchColor ){
 
         counter+=1;
 
@@ -282,8 +287,9 @@ function checkHit() {
 
         }
     }
-    else if (monsterLeft < 100 && monsterLeft > 50 && witchTop >= 300 && monsterColor !== witchColor){
+    else if (monsterLeft < 75 && witchTop >= 300 && monsterColor !== witchColor){
         // console.log(monster.style.animation);
+   
         // console.log(monsterColor);
 
         // monster.style.animation = "none";
@@ -313,7 +319,7 @@ function checkHit() {
     }
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter); //(counter / 100);
 
-        }, 70)
+        }, 150)
 
     }
 
