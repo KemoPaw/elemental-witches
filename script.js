@@ -7,7 +7,7 @@ const gameoverScreen =  document.getElementById("gameover-screen");
 const finalScore = document.getElementById("gameover-final-score");
 
 
-
+let gameSound = new Audio('bensound-smile.mp3');
 
 let counter = 0;
 const keys = [];
@@ -15,6 +15,8 @@ const keys = [];
 let allowedToJump = true;
 let startGame = false;
 let restartGame = false;
+let playSound = true;
+
 
 // console.log(startGame);
 
@@ -27,7 +29,9 @@ let restartGame = false;
 function startTheGame(e){
     e.preventDefault();
 
-    if (e.keyCode === 13 && startGame === false) {
+    // let gameStatus = localStorage.getItem('gameStarted');
+
+    if (e.keyCode === 13 && startGame === false ) {
     startGame = true;
     // console.log(startGame);
     // console.log(startScreenInfo.style.display);
@@ -38,26 +42,62 @@ function startTheGame(e){
     // console.log(gameScreen.style.display);
 
     gameScreen.style.display = "block";
+    // console.log('added item = ' + (localStorage.getItem('gameStarted')));
+
+    // localStorage.setItem('gameStarted', JSON.stringify(true));
+    // console.log('added item = ' + (localStorage.getItem('gameStarted')));
     // console.log("Start the first game!")
+    //   if (counter === 0) {
+    monster.classList.add("monsterMagenta");
+
+    // }
     checkHit();
+
+    }
+    // else if (e.keyCode === 82 && gameStatus) {
+    // startGame = true;
+    // console.log("rechecking start game");
+    // // console.log(startGame);
+    // // console.log(startScreenInfo.style.display);
+
+
+    // // startScreenInfo.style.display = "none";
+
+    // // gameScreen.style.display = "block";
+    //     // gameoverScreen.style.display = "none";
+    //     // gameScreen.style.display = "block";
+    // // localStorage.setItem('gameStarted', true);
+    // // console.log("Start the first game!")
+    // //   if (counter === 0) {
+    // monster.classList.add("monsterMagenta");
+
+    // // }
+    // checkHit();
+
     }
 
-}
+// }
 
 function restartTheGame(e) { // PRESS R
 
     e.preventDefault();
-    if (e.keyCode === 82 && startGame == true){
+    if (e.keyCode === 82 && startGame == true ){
         restartGame = true;
 
-        gameoverScreen.style.display = "none";
-        gameScreen.style.display = "block";
+        // gameoverScreen.style.display = "none";
+        // gameScreen.style.display = "block";
+
+        // finalScore.textContent = 0;
+        // resetEventListener();
+        // checkHit();
+
+        
+        location.reload();
+
+
 
         // console.log(allowedToJump);
-        finalScore.textContent = 0;
         // console.log(finalScore.textContent);
-        resetEventListener();
-        checkHit();
         // location.reload();
         // console.log("Hello from restart the game");
         // console.log(counter);
@@ -66,17 +106,17 @@ function restartTheGame(e) { // PRESS R
 
 }
 
-function resetEventListener() {
+// function resetEventListener() {
 
-    // window.removeEventListener("keydown", startTheGame);
-    // window.removeEventListener("keydown", restartTheGame);
-    // window.removeEventListener("keydown", jump);
-    // window.removeEventListener("keydown", colorChange);
-    // window.removeEventListener("keyup", colorReset);
-    colorReset();
-    resetColor();
+//     // window.removeEventListener("keydown", startTheGame);
+//     // window.removeEventListener("keydown", restartTheGame);
+//     // window.removeEventListener("keydown", jump);
+//     // window.removeEventListener("keydown", colorChange);
+//     // window.removeEventListener("keyup", colorReset);
+//     colorReset();
+//     resetColor();
 
-}
+// }
 
 // if (startGame === false) {
 //     startTheGame();
@@ -88,7 +128,21 @@ window.addEventListener("keydown", restartTheGame);
 window.addEventListener("keydown", jump);
 window.addEventListener("keydown", colorChange);
 window.addEventListener("keyup", colorReset);
+window.addEventListener("keydown", musicToggle);
 
+function musicToggle(e) {
+
+    if(e.keyCode === 77 && playSound === true) {
+        gameSound.pause();
+        gameSound.currentTime = 0;
+        playSound = false;
+    }
+
+    else if (e.keyCode === 77 && playSound === false) {
+        gameSound.play();
+        playSound = true;
+    }
+}
 function jump(e) {
     if (e.keyCode === 32 && allowedToJump === true){
         if (witch.classList === "animate") { return }
@@ -204,11 +258,17 @@ function resetColor(){
 
 // let noGame = console.log("game not started");
 
+
 function checkHit() {
     if (startGame || restartGame) {
     // console.log("inside checkhit");
 
     restartGame = false;
+
+    if (playSound === true) {
+        // gameSound.play();
+    }
+    
 
     let collision = setInterval(function() {
 
@@ -230,7 +290,7 @@ function checkHit() {
     let monsterColor = window.getComputedStyle(monster).backgroundColor;
     let witchColor = window.getComputedStyle(witch).backgroundColor;
 
-    if (monsterLeft < 100 && monsterLeft > 0 && witchTop >= 300  && monsterColor === witchColor ){
+    if (monsterLeft < 75 && monsterLeft > 0 && witchTop >= 300  && monsterColor === witchColor ){
 
         counter+=1;
 
@@ -261,7 +321,7 @@ function checkHit() {
 
         }
     }
-    else if (monsterLeft < 100 && monsterLeft > 50 && witchTop >= 300 && monsterColor !== witchColor){
+    else if (monsterLeft < 75 && monsterLeft > 50 && witchTop >= 300 && monsterColor !== witchColor){
         // console.log(monster.style.animation);
         // console.log(monsterColor);
 
@@ -292,12 +352,17 @@ function checkHit() {
     }
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter); //(counter / 100);
 
-        }, 70)
+        }, 80)
 
     }
 
     else {
         // console.log("game not started");
     }
-} 
+}
 
+window.addEventListener('beforeunload', function(event) {
+    // alert("Hello! I am an alert box!!");
+  //do something here
+  localStorage.removeItem('gameStarted');
+}, false);

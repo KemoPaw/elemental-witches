@@ -131,6 +131,8 @@ h1 {
     width: 50px;
     top: 355px;
     left: 50px;
+    padding: 0px;
+    margin: 0px;
     position: relative;
     background-color:rgba(173, 168, 173, 0);
 }
