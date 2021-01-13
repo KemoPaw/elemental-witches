@@ -266,7 +266,7 @@ function checkHit() {
     restartGame = false;
 
     if (playSound === true) {
-        // gameSound.play();
+        gameSound.play();
     }
     
 
@@ -361,8 +361,3 @@ function checkHit() {
     }
 }
 
-window.addEventListener('beforeunload', function(event) {
-    // alert("Hello! I am an alert box!!");
-  //do something here
-  localStorage.removeItem('gameStarted');
-}, false);
