@@ -40,8 +40,37 @@ function startTheGame(e){
     // console.log(gameScreen.style.display);
 
     gameScreen.style.display = "block";
+    // localStorage.setItem('gameStarted', true);
     // console.log("Start the first game!")
+    //   if (counter === 0) {
+        monster.classList.add("monsterMagenta");
+
+    // }
     checkHit();
+
+    }
+
+    
+    else if (e.keyCode === 82 && startGame === true) {
+    startGame = true;
+    console.log("rechecking start game");
+    // console.log(startGame);
+    // console.log(startScreenInfo.style.display);
+
+
+    // startScreenInfo.style.display = "none";
+
+    // gameScreen.style.display = "block";
+        // gameoverScreen.style.display = "none";
+        // gameScreen.style.display = "block";
+    // localStorage.setItem('gameStarted', true);
+    // console.log("Start the first game!")
+    //   if (counter === 0) {
+    monster.classList.add("monsterMagenta");
+
+    // }
+    checkHit();
+
     }
 
 }
@@ -49,17 +78,23 @@ function startTheGame(e){
 function restartTheGame(e) { // PRESS R
 
     e.preventDefault();
-    if (e.keyCode === 82 && startGame == true){
+    if (e.keyCode === 82 && startGame == true ){
         restartGame = true;
 
-        gameoverScreen.style.display = "none";
-        gameScreen.style.display = "block";
+        // gameoverScreen.style.display = "none";
+        // gameScreen.style.display = "block";
+
+        // finalScore.textContent = 0;
+        // resetEventListener();
+        // checkHit();
+
+        
+        location.reload();
+
+
 
         // console.log(allowedToJump);
-        finalScore.textContent = 0;
         // console.log(finalScore.textContent);
-        resetEventListener();
-        checkHit();
         // location.reload();
         // console.log("Hello from restart the game");
         // console.log(counter);
@@ -220,11 +255,13 @@ function resetColor(){
 
 // let noGame = console.log("game not started");
 
+
 function checkHit() {
     if (startGame || restartGame) {
     // console.log("inside checkhit");
 
     restartGame = false;
+
     if (playSound === true) {
         // gameSound.play();
     }
@@ -239,24 +276,18 @@ function checkHit() {
     // console.log("Game Start!")
     let witchTop = parseInt(window.getComputedStyle(witch).getPropertyValue("top"));
     let monsterLeft = parseInt(window.getComputedStyle(monster).getPropertyValue("left"));
-    // let witchLeft = parseInt(window.getComputedStyle(witch).getPropertyValue("left"));
-
-   
-
     
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
 
     if (counter === 0) {
         monster.classList.add("monsterMagenta");
-
+        // console.log("Monster bg color is shown to be magenta");
     }
 
     let monsterColor = window.getComputedStyle(monster).backgroundColor;
     let witchColor = window.getComputedStyle(witch).backgroundColor;
 
-  
-
-    if (monsterLeft < 75 && witchTop >= 300  && monsterColor === witchColor ){
+    if (monsterLeft < 75 && monsterLeft > 0 && witchTop >= 300  && monsterColor === witchColor ){
 
         counter+=1;
 
@@ -287,9 +318,8 @@ function checkHit() {
 
         }
     }
-    else if (monsterLeft < 75 && witchTop >= 300 && monsterColor !== witchColor){
+    else if (monsterLeft < 75 && monsterLeft > 50 && witchTop >= 300 && monsterColor !== witchColor){
         // console.log(monster.style.animation);
-   
         // console.log(monsterColor);
 
         // monster.style.animation = "none";
@@ -319,12 +349,17 @@ function checkHit() {
     }
     document.getElementById("scoreSpan").innerHTML = Math.floor(counter); //(counter / 100);
 
-        }, 150)
+        }, 80)
 
     }
 
     else {
         // console.log("game not started");
     }
-} 
+}
 
+window.addEventListener('beforeunload', function(event) {
+    // alert("Hello! I am an alert box!!");
+  //do something here
+  localStorage.removeItem('gameStarted');
+}, false);
