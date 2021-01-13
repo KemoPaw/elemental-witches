@@ -29,7 +29,9 @@ let playSound = true;
 function startTheGame(e){
     e.preventDefault();
 
-    if (e.keyCode === 13 && startGame === false) {
+    // let gameStatus = localStorage.getItem('gameStarted');
+
+    if (e.keyCode === 13 && startGame === false ) {
     startGame = true;
     // console.log(startGame);
     // console.log(startScreenInfo.style.display);
@@ -40,30 +42,10 @@ function startTheGame(e){
     // console.log(gameScreen.style.display);
 
     gameScreen.style.display = "block";
-    // localStorage.setItem('gameStarted', true);
-    // console.log("Start the first game!")
-    //   if (counter === 0) {
-        monster.classList.add("monsterMagenta");
+    // console.log('added item = ' + (localStorage.getItem('gameStarted')));
 
-    // }
-    checkHit();
-
-    }
-
-    
-    else if (e.keyCode === 82 && startGame === true) {
-    startGame = true;
-    console.log("rechecking start game");
-    // console.log(startGame);
-    // console.log(startScreenInfo.style.display);
-
-
-    // startScreenInfo.style.display = "none";
-
-    // gameScreen.style.display = "block";
-        // gameoverScreen.style.display = "none";
-        // gameScreen.style.display = "block";
-    // localStorage.setItem('gameStarted', true);
+    // localStorage.setItem('gameStarted', JSON.stringify(true));
+    // console.log('added item = ' + (localStorage.getItem('gameStarted')));
     // console.log("Start the first game!")
     //   if (counter === 0) {
     monster.classList.add("monsterMagenta");
@@ -72,8 +54,29 @@ function startTheGame(e){
     checkHit();
 
     }
+    // else if (e.keyCode === 82 && gameStatus) {
+    // startGame = true;
+    // console.log("rechecking start game");
+    // // console.log(startGame);
+    // // console.log(startScreenInfo.style.display);
 
-}
+
+    // // startScreenInfo.style.display = "none";
+
+    // // gameScreen.style.display = "block";
+    //     // gameoverScreen.style.display = "none";
+    //     // gameScreen.style.display = "block";
+    // // localStorage.setItem('gameStarted', true);
+    // // console.log("Start the first game!")
+    // //   if (counter === 0) {
+    // monster.classList.add("monsterMagenta");
+
+    // // }
+    // checkHit();
+
+    }
+
+// }
 
 function restartTheGame(e) { // PRESS R
 
@@ -103,17 +106,17 @@ function restartTheGame(e) { // PRESS R
 
 }
 
-function resetEventListener() {
+// function resetEventListener() {
 
-    // window.removeEventListener("keydown", startTheGame);
-    // window.removeEventListener("keydown", restartTheGame);
-    // window.removeEventListener("keydown", jump);
-    // window.removeEventListener("keydown", colorChange);
-    // window.removeEventListener("keyup", colorReset);
-    colorReset();
-    resetColor();
+//     // window.removeEventListener("keydown", startTheGame);
+//     // window.removeEventListener("keydown", restartTheGame);
+//     // window.removeEventListener("keydown", jump);
+//     // window.removeEventListener("keydown", colorChange);
+//     // window.removeEventListener("keyup", colorReset);
+//     colorReset();
+//     resetColor();
 
-}
+// }
 
 // if (startGame === false) {
 //     startTheGame();
