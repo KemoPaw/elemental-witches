@@ -62,20 +62,8 @@ h1 {
 }
 
 #about-music-links {
-    /* display: block; */
     margin: auto;
-    /* width: 1200px; */
-    /* height: 50px; */
-    /* display: flex; */
     padding-left: 10%;
-
-    /* margin-left: 500px; */
-    /* left: 45%; */
-    /* // display: block;
-    // direction: rtl; */
-    /* align-items: center;
-    align-content: center; */
-    /* justify-content: flex-start; */
 }
 
 #about-music-links > * {
@@ -182,7 +170,6 @@ h1 {
 }
 
 #gameover-screen-witch {
-    /* margin: 15px; */
     padding-top: 15px;
     padding-bottom: 15px;
 
@@ -190,19 +177,12 @@ h1 {
     width: 120px;
     padding-left: 550px;
     padding-right: 600px;
-
-    /* position: relative; */
-    /* background-color:rgba(173, 168, 173, 0); */
-    /* background-color: #393f6d; */
     background-color: #2A2E5C;
     border: 1px transparent solid;
     -webkit-filter: grayscale(100%);
   filter: grayscale(50%);
 }
 
-.witchStill {
-    background-color: mediumpurple!important;
-}
 
 .witchOrange {
     background-color: #FFB946!important;
@@ -248,7 +228,6 @@ h1 {
 }
 
 #monster {
-    /* background-color: magenta; */
     background-color:rgba(173, 168, 173, 0);
     height: 50px;
     width: 50px;
