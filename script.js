@@ -132,6 +132,8 @@ window.addEventListener("keydown", musicToggle);
 
 function musicToggle(e) {
 
+    gameSound.volume = 0.1;
+
     if(e.keyCode === 77 && playSound === true) {
         gameSound.pause();
         gameSound.currentTime = 0;
@@ -177,11 +179,9 @@ function colorReset() {
     witch.classList.remove("witchPurple");
     witch.classList.remove("witchGrey");
     witch.classList.remove("witchBlack");
-
 }
 
 function colorChange(e) {
-    // switch(e.keyCode) {
     if (e.keyCode === 65){
         witch.classList.add("witchMagenta");
 
