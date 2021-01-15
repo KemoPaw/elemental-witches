@@ -15,15 +15,8 @@ const keys = [];
 let allowedToJump = true;
 let startGame = false;
 let restartGame = false;
-let playSound = true;
+let playSound = false;
 
-
-// console.log(startGame);
-
-// document.getElementsByClassName("info-screen").style.display = "block";
-
-//  gameScreen.style.display = "block";
-// startScreenInfo.style.display = "none";
 
 
 function startTheGame(e){
