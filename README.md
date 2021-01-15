@@ -86,6 +86,6 @@ In the Javascript portion, I removed all possible background color "classes" fro
 
 I found it to be a fun time to implement my own art into the game by creating customized sprites! I simply went to [PixilArt](https://www.pixilart.com/draw) to create my assets, and exported them to add to my game! 
 
-<img src="https://github.com/KemoPaw/elemental-witches/blob/gh-pages/witch-pixel2.png" width="100" height="200">
+<img src="https://github.com/KemoPaw/elemental-witches/blob/gh-pages/EM-Picture.png" width="500" height="auto">
 
 
