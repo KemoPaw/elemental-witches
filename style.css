@@ -368,3 +368,11 @@ h1 {
    color: white;
     
 }
+
+.hidden {
+    display: none;
+}
+
+.showContent {
+    display: block;
+}
